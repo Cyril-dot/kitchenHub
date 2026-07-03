@@ -206,6 +206,22 @@
   .faq-item.open .faq-a { max-height: 300px; padding: 0 24px 20px; }
   .faq-a p { font-size: .88rem; }
 
+  #about { background: var(--offwhite); }
+  .about-wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 50px; align-items: center; }
+  .about-img { width: 100%; border-radius: 20px; box-shadow: var(--card-shadow); object-fit: cover; height: 360px; }
+  .about-list { list-style: none; margin-top: 20px; }
+  .about-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .9rem; color: var(--muted); margin-bottom: 12px; }
+  .about-list .material-symbols-outlined { color: var(--orange); font-size: 20px; margin-top: 1px; }
+
+  #legal { background: white; }
+  .legal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+  .legal-card { background: var(--offwhite); border-radius: 18px; padding: 32px; border: 1.5px solid var(--border); }
+  .legal-card h3 { color: var(--navy); font-family: 'Playfair Display', serif; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .legal-card h3 .material-symbols-outlined { color: var(--orange); }
+  .legal-card p { font-size: .87rem; margin-bottom: 10px; }
+  .legal-card ul { margin: 0 0 10px 20px; }
+  .legal-card ul li { font-size: .87rem; color: var(--muted); margin-bottom: 6px; line-height: 1.6; }
+
   #contact { background: var(--navy); }
   #contact .section-title { color: white; }
   #contact .section-label { color: var(--orange); }
@@ -288,6 +304,8 @@
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .step:not(:last-child)::after { display: none; }
     .steps-wrap { gap: 24px; }
+    .about-wrap { grid-template-columns: 1fr; }
+    .about-img { height: 260px; }
   }
   @media (max-width: 640px) {
     .nav-links, .nav-search { display: none; }
@@ -313,10 +331,12 @@
     <span>Tiwaa Essential</span>
   </a>
   <ul class="nav-links">
+    <li><a href="#about">About</a></li>
     <li><a href="#categories">Categories</a></li>
     <li><a href="#products">Products</a></li>
     <li><a href="#order">Order</a></li>
     <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -335,10 +355,12 @@
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobileMenu()">About</a>
   <a href="#categories" onclick="closeMobileMenu()">Categories</a>
   <a href="#products" onclick="closeMobileMenu()">Products</a>
   <a href="#order" onclick="closeMobileMenu()">Order</a>
   <a href="#testimonials" onclick="closeMobileMenu()">Reviews</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
   <a href="#contact" onclick="closeMobileMenu()">Contact</a>
 </div>
 
@@ -400,6 +422,23 @@
     </div>
   </div>
 </div>
+
+<section id="about">
+  <div class="inner about-wrap">
+    <img class="about-img fade-up" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=900&q=80" alt="Tiwaa Essential kitchen showroom">
+    <div class="fade-up">
+      <div class="section-label">About Us</div>
+      <h2 class="section-title">Who We Are</h2>
+      <p style="margin-bottom:16px">Tiwaa Essential is a Ghana-based supplier of premium kitchen utensils, cookware, cutlery and kitchen essentials. For over 7 years we've helped households, restaurants and hotels across the country stock their kitchens with reliable, quality products at fair prices.</p>
+      <p>We source directly from trusted manufacturers, which means you get authentic, durable products without the retail markup — delivered straight to your door, wherever you are in Ghana.</p>
+      <ul class="about-list">
+        <li><span class="material-symbols-outlined">check_circle</span> Registered Ghanaian business supplying kitchenware nationwide</li>
+        <li><span class="material-symbols-outlined">check_circle</span> Direct sourcing for authentic, quality-checked products</li>
+        <li><span class="material-symbols-outlined">check_circle</span> Support for individual households and bulk institutional orders</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 <section id="categories">
   <div class="inner">
@@ -510,7 +549,7 @@
       <div class="order-form-inner">
         <div class="form-row">
           <div class="form-group"><label for="custName">Full Name *</label><input type="text" id="custName" placeholder="e.g. Ama Mensah" required></div>
-          <div class="form-group"><label for="custPhone">Phone Number *</label><input type="tel" id="custPhone" placeholder="e.g. +233 24 000 0000" required></div>
+          <div class="form-group"><label for="custPhone">Phone Number *</label><input type="tel" id="custPhone" placeholder="e.g. +233 59 853 0702" required></div>
         </div>
         <div class="form-group"><label for="custEmail">Email Address</label><input type="email" id="custEmail" placeholder="you@example.com"></div>
         <div class="form-group"><label for="custAddress">Delivery Address *</label><input type="text" id="custAddress" placeholder="Street, City, Region" required></div>
@@ -548,6 +587,41 @@
   </div>
 </section>
 
+<section id="legal">
+  <div class="inner">
+    <div class="section-header fade-up">
+      <div class="section-label">Policies</div>
+      <h2 class="section-title">Terms of Service & Refund Policy</h2>
+      <p class="section-sub">Please review our terms and refund policy before placing an order.</p>
+    </div>
+    <div class="legal-grid fade-up">
+      <div class="legal-card">
+        <h3><span class="material-symbols-outlined">gavel</span>Terms of Service</h3>
+        <p>By placing an order with Tiwaa Essential, you agree to the following terms:</p>
+        <ul>
+          <li>Orders are confirmed via WhatsApp or phone after submission through this website.</li>
+          <li>Prices displayed are estimates in Ghana Cedis (GHS) and may be adjusted for delivery location, exchange rate changes, or product availability, subject to your confirmation before payment.</li>
+          <li>Payment is arranged directly with our team via Mobile Money, bank transfer, or cash on delivery in selected areas.</li>
+          <li>Delivery timelines are estimates and may vary based on location and product availability.</li>
+          <li>All products remain the property of Tiwaa Essential until payment is completed in full.</li>
+          <li>We reserve the right to decline or cancel any order at our discretion, with a full refund where payment has already been made.</li>
+        </ul>
+      </div>
+      <div class="legal-card">
+        <h3><span class="material-symbols-outlined">assignment_return</span>Refund Policy</h3>
+        <p>Customer satisfaction matters to us. Our refund policy is as follows:</p>
+        <ul>
+          <li>Items damaged in transit or faulty on arrival are eligible for a free replacement or full refund if reported within 48 hours of delivery, with photo evidence.</li>
+          <li>Unopened, unused items in original packaging may be returned within 7 days of delivery for a refund, minus delivery costs.</li>
+          <li>Refunds are processed to the original payment method (Mobile Money or bank transfer) within 3–7 business days of an approved return.</li>
+          <li>Custom or bulk institutional orders may be subject to different return terms, communicated at the time of order.</li>
+          <li>To request a refund or replacement, contact us via WhatsApp or phone with your order details.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="inner">
     <div class="section-header fade-up">
@@ -556,13 +630,13 @@
       <p class="section-sub">Reach us via WhatsApp or phone — we respond fast.</p>
     </div>
     <div class="contact-grid fade-up">
-      <a class="contact-card" href="https://wa.me/233537999001" target="_blank">
+      <a class="contact-card" href="https://wa.me/233598530702" target="_blank">
         <div class="contact-card-icon"><span class="material-symbols-outlined">chat</span></div>
-        <div><h3>WhatsApp</h3><p>+233 24 000 0000<br>Available 8am – 8pm daily</p></div>
+        <div><h3>WhatsApp</h3><p>+233 59 853 0702<br>Available 8am – 8pm daily</p></div>
       </a>
-      <a class="contact-card" href="tel:+233537999001">
+      <a class="contact-card" href="tel:+233598530702">
         <div class="contact-card-icon"><span class="material-symbols-outlined">phone</span></div>
-        <div><h3>Call Us</h3><p>+233 24 000 0000<br>Mon–Sat, 8am – 6pm</p></div>
+        <div><h3>Call Us</h3><p>+233 59 853 0702<br>Mon–Sat, 8am – 6pm</p></div>
       </a>
       <div class="contact-card">
         <div class="contact-card-icon"><span class="material-symbols-outlined">schedule</span></div>
@@ -583,13 +657,14 @@
       <div class="footer-socials">
         <a class="social-btn" href="#" aria-label="Facebook"><span class="material-symbols-outlined" style="font-size:18px">public</span></a>
         <a class="social-btn" href="#" aria-label="Instagram"><span class="material-symbols-outlined" style="font-size:18px">photo_camera</span></a>
-        <a class="social-btn" href="https://wa.me/233537999001" aria-label="WhatsApp"><span class="material-symbols-outlined" style="font-size:18px">chat</span></a>
+        <a class="social-btn" href="https://wa.me/233598530702" aria-label="WhatsApp"><span class="material-symbols-outlined" style="font-size:18px">chat</span></a>
       </div>
     </div>
     <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
         <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About Us</a></li>
         <li><a href="#categories">Categories</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="#how">How It Works</a></li>
@@ -597,20 +672,19 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Categories</h4>
+      <h4>Company</h4>
       <ul>
-        <li><a href="#" onclick="filterProducts('Cookware')">Cookware</a></li>
-        <li><a href="#" onclick="filterProducts('Cutlery')">Cutlery</a></li>
-        <li><a href="#" onclick="filterProducts('Storage')">Storage</a></li>
-        <li><a href="#" onclick="filterProducts('Baking')">Baking</a></li>
-        <li><a href="#" onclick="filterProducts('Tools')">Tools</a></li>
+        <li><a href="#testimonials">Customer Reviews</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#legal">Terms of Service</a></li>
+        <li><a href="#legal">Refund Policy</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
       <ul class="footer-contact">
-        <li><span class="material-symbols-outlined">chat</span> +233 24 000 0000 (WhatsApp)</li>
-        <li><span class="material-symbols-outlined">phone</span> +233 24 000 0000</li>
+        <li><span class="material-symbols-outlined">chat</span> +233 59 853 0702 (WhatsApp)</li>
+        <li><span class="material-symbols-outlined">phone</span> +233 59 853 0702</li>
         <li><span class="material-symbols-outlined">location_on</span> Accra, Ghana</li>
       </ul>
     </div>
@@ -648,17 +722,17 @@
 </div>
 
 <script>
-const SUPPLIER_WHATSAPP = '233537999001';
+const SUPPLIER_WHATSAPP = '233598530702';
 
 const products = [
-  { id:1, name:'Stainless Steel Pot Set', cat:'Cookware', price:280, rating:4.8, reviews:124, badge:'Best Seller', desc:'6-piece premium stainless steel pot set with heat-resistant handles. Suitable for all cooktops.', img:'https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&q=80' },
-  { id:2, name:'Non-Stick Frying Pan', cat:'Cookware', price:95, rating:4.7, reviews:89, badge:'Popular', desc:'24cm non-stick frying pan with PFOA-free coating. Dishwasher safe and oven compatible.', img:'https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400&q=80' },
-  { id:3, name:'Chef Knife Set', cat:'Cutlery', price:185, rating:4.9, reviews:210, badge:'Top Rated', desc:'Professional 5-piece chef knife set with Japanese high-carbon stainless steel blades.', img:'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=400&q=80' },
-  { id:4, name:'Silicone Kitchen Tools', cat:'Tools', price:65, rating:4.6, reviews:67, badge:'', desc:'7-piece heat-resistant silicone utensil set. Includes spatula, ladle, whisk, and more.', img:'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&q=80' },
-  { id:5, name:'Food Storage Containers', cat:'Storage', price:120, rating:4.7, reviews:145, badge:'New', desc:'10-piece BPA-free airtight food storage set with clear lids. Microwave and freezer safe.', img:'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400&q=80' },
-  { id:6, name:'Baking Tray Set', cat:'Baking', price:75, rating:4.5, reviews:53, badge:'', desc:'3-piece non-stick baking tray set with rolled edges for durability. Includes small, medium and large.', img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80' },
-  { id:7, name:'Vegetable Chopper', cat:'Tools', price:55, rating:4.4, reviews:38, badge:'', desc:'Multi-function vegetable chopper with 5 interchangeable blades. Easy clean design.', img:'https://images.unsplash.com/photo-1617692855027-33b14f061079?w=400&q=80' },
-  { id:8, name:'Premium Cutlery Set', cat:'Cutlery', price:145, rating:4.8, reviews:92, badge:'', desc:'24-piece stainless steel cutlery set for 6 people. Mirror polished finish with gift box.', img:'https://images.unsplash.com/photo-1571566882372-1598d88abd90?w=400&q=80' },
+  { id:1, name:'Stainless Steel Pot Set', cat:'Cookware', price:280, rating:4.8, reviews:124, badge:'Best Seller', desc:'6-piece premium stainless steel pot set with heat-resistant handles. Suitable for all cooktops.', img:'https://images.unsplash.com/photo-1511224931379-b4e4324ea7fc?w=400&q=80' },
+  { id:2, name:'Non-Stick Frying Pan', cat:'Cookware', price:95, rating:4.7, reviews:89, badge:'Popular', desc:'24cm non-stick frying pan with PFOA-free coating. Dishwasher safe and oven compatible.', img:'https://images.unsplash.com/photo-1581147036217-6f4bd9074fef?w=400&q=80' },
+  { id:3, name:'Chef Knife Set', cat:'Cutlery', price:185, rating:4.9, reviews:210, badge:'Top Rated', desc:'Professional 5-piece chef knife set with Japanese high-carbon stainless steel blades.', img:'https://images.unsplash.com/photo-1563559983710-47af8035e4be?w=400&q=80' },
+  { id:4, name:'Silicone Kitchen Tools', cat:'Tools', price:65, rating:4.6, reviews:67, badge:'', desc:'7-piece heat-resistant silicone utensil set. Includes spatula, ladle, whisk, and more.', img:'https://images.unsplash.com/photo-1765979576273-0e313277ee65?w=400&q=80' },
+  { id:5, name:'Food Storage Containers', cat:'Storage', price:120, rating:4.7, reviews:145, badge:'New', desc:'10-piece BPA-free airtight food storage set with clear lids. Microwave and freezer safe.', img:'https://images.unsplash.com/photo-1569420077790-afb136b3bb8c?w=400&q=80' },
+  { id:6, name:'Baking Tray Set', cat:'Baking', price:75, rating:4.5, reviews:53, badge:'', desc:'3-piece non-stick baking tray set with rolled edges for durability. Includes small, medium and large.', img:'https://images.unsplash.com/photo-1499889808931-317a0255c0e9?w=400&q=80' },
+  { id:7, name:'Vegetable Chopper', cat:'Tools', price:55, rating:4.4, reviews:38, badge:'', desc:'Multi-function vegetable chopper with 5 interchangeable blades. Easy clean design.', img:'https://images.unsplash.com/photo-1604835071149-e069ebdd9595?w=400&q=80' },
+  { id:8, name:'Premium Cutlery Set', cat:'Cutlery', price:145, rating:4.8, reviews:92, badge:'', desc:'24-piece stainless steel cutlery set for 6 people. Mirror polished finish with gift box.', img:'https://images.unsplash.com/photo-1771830933605-ffbae3e3d1b5?w=400&q=80' },
 ];
 
 const testimonials = [
@@ -676,6 +750,7 @@ const faqs = [
   { q: 'Can I order via WhatsApp?', a: 'Absolutely. Simply add products to your cart, fill in the order form, and tap "Order via WhatsApp." A pre-filled message with all your order details will be sent directly to our team.' },
   { q: 'Do you deliver nationwide?', a: 'Yes, we deliver across Ghana. Delivery charges and timelines may vary by region. Our team will provide the exact cost when confirming your order.' },
   { q: 'How do I make payment?', a: 'Payment is arranged directly with our team after you submit your order. We accept Mobile Money (MTN, Vodafone, AirtelTigo), bank transfer and cash on delivery in selected areas.' },
+  { q: 'What is your refund and return policy?', a: 'Damaged or faulty items are eligible for a free replacement or full refund if reported within 48 hours of delivery. Unopened items in original packaging can be returned within 7 days. See our full Refund Policy above for details.' },
 ];
 
 let cart = [];
